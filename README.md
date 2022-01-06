@@ -19,7 +19,8 @@ Models were trained with k from 1 to 5 based on data of 10 elements in total ext
 20 elements would be selected from the CSD by abundance, and all pairs of elements that the model make misclassifications would be picked out. In addition, the relationship between the selection of the hyperparameter k and the performance of the model would be investigated.
 
 ## 2.2 5 Jan 2022
-
+Data of 20 most abundant elements in the CSD were extracted. There were 940k samples in total. The model was trained on k=5 and the result is shown below.
+![top20.jpg](top_20_k_5.jpg)
 
 ## 5 Jan 2022
 20 elements were picked out based on abundancy in the CSD (Cambridge Structural Database).
