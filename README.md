@@ -15,16 +15,19 @@ Models were trained with k from 1 to 5 based on data of 10 elements in total ext
 ![CNO_k_4](https://user-images.githubusercontent.com/52390858/145274094-c9216d0a-0f92-4a78-8b28-15ac76014982.jpg)
 ![CNO_k_5](https://user-images.githubusercontent.com/52390858/145274102-cbb57baa-e3e0-4d7b-9066-1b252f4d57dc.jpg)
 
+The model seems to have difficulty on distinguishing Aluminium from Lithium, which might be able to be explained chemically. 
+
 ### Next steps 
 20 elements would be selected from the CSD by abundance, and all pairs of elements that the model make misclassifications would be picked out. In addition, the relationship between the selection of the hyperparameter k and the performance of the model would be investigated.
 
 ## 2.2 5 Jan 2022
+### Current results
 Data of 20 most abundant elements in the CSD were extracted. There were 940k samples in total. The model was trained on k=5 and the result is shown below.
 ![top20.jpg](top_20_k_5.jpg)
 
-## 5 Jan 2022
-20 elements were picked out based on abundancy in the CSD (Cambridge Structural Database).
+### Next steps
+Since there are too much data that would be too slow to fit in the memory, I decided to switch to tf.data.Dataset. Later on, a figure showing how the performance (represented by confusion matrix) is developing with the increase of k shall be plotted. In addition the particular crystal IDs, and the elements where the model made misclassification shall be extracted and analyzed. 
 
-The model seems to have difficulty on distinguishing Aluminium from Lithium, which might be able to explain chemically. 
+
 
 
