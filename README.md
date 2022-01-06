@@ -3,7 +3,7 @@ A predictor for atom types in crystals based on their k-NN distances.
 The project proposal could be found in the files.
 
 # 1. The model structure
-Current model structure includes a sigmoid classifier, with 3 layers of 64 fully-connected neurons inside, and a weight of 118 applied to the true classes (the classes that presented in the dataset) to resolve class imbalance, and a softmax with input being the combination of the output of the sigmoid classifier and the k-NN distances. The model is then trained with 10000 samples on each element, which was obtained through CSD (Cambridge Structural Database). 
+Current model structure includes a sigmoid classifier, with 3 layers of 64 fully-connected neurons inside, and a weight of 118 applied to the true classes (the classes that presented in the dataset) to resolve class imbalance, and a softmax with input being the combination of the output of the sigmoid classifier and the k-NN distances. The model is then trained with data obtained through CSD (Cambridge Structural Database). 
 
 # 2. Updates
 ## 2.1 8 Dec 2021
