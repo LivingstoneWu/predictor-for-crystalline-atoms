@@ -26,7 +26,7 @@ Data of 20 most abundant elements in the CSD were extracted. There were 940k sam
 ![top20.jpg](top_20_k_5.jpg)
 
 ### Next steps
-Since there are too much data that would be too slow to fit in the memory, I decided to switch to tf.data.Dataset. Later on, a figure showing how the performance (represented by confusion matrix) is developing with the increase of k shall be plotted. In addition the particular crystal IDs, and the elements where the model made misclassification shall be extracted and analyzed. 
+Since there are too much data that would be too slow to fit in the memory, I decided to switch to [tf.data.Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset). Later on, a figure showing how the performance (represented by confusion matrix) is developing with the increase of k shall be plotted. In addition the particular crystal IDs, and the elements where the model made misclassification shall be extracted and analyzed. 
 
 
 
