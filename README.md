@@ -7,7 +7,8 @@ Current model structure includes a sigmoid classifier, with 3 layers of 64 fully
 
 # 2. Updates
 ## 2.1 8 Dec 2021
-### Current
+### Current results
+Models were trained with k from 1 to 5 based on data of 10 elements in total extracted from the CSD. There is a upper limit of 10,000 samples for each element (otherwise the number of samples is simply the number of occurrences of the element in the database). The performance of the model is shown in form of confusion matrix in the figures below, ordered by k from 1 to 5.
 ![CNO_k_1](https://user-images.githubusercontent.com/52390858/145274061-66dfe235-a073-4410-8d03-ae9e66bbf47d.jpg)
 ![CNO_k_2](https://user-images.githubusercontent.com/52390858/145274073-ec1d8237-32f4-45b8-b3a0-5e04a9f0969e.jpg)
 ![CNO_k_3](https://user-images.githubusercontent.com/52390858/145274087-684cddae-17c3-44fc-b243-5591e27077ee.jpg)
