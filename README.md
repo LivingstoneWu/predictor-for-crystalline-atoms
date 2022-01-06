@@ -1,5 +1,5 @@
 # predictor-for-crystalline-atoms
-A predictor for atom types in crystals based on their k-NN distances.
+A predictor for atom types in crystals based on their [k-NN distances](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm).
 The project proposal could be found in the files.
 
 # 1. The model structure
