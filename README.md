@@ -23,7 +23,7 @@ The model seems to have difficulty on distinguishing Aluminium from Lithium, whi
 ## 2.2 5th Jan 2022
 ### Current results
 Data of 20 most abundant elements in the CSD were extracted. There were 940k samples in total. The model was trained on k=5 and the result is shown below.
-![top20_k=5](./ml_results/top20_elements/top20_k=5.jpg)
+![top20_k=5](./ml_results/top20_elements/top20_k=5.png)
 
 ### Next steps
 Since there are too much data that would be too slow to fit in the memory, I decided to switch to [tf.data.Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset). Later on, a figure showing how the performance (represented by confusion matrix) is developing with the increase of k shall be plotted. In addition the particular crystal IDs, and the elements where the model made misclassification shall be extracted and analyzed. 
