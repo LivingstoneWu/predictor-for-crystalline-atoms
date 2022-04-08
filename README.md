@@ -23,7 +23,7 @@ The model seems to have difficulty on distinguishing Aluminium from Lithium, whi
 ## 2.2 5th Jan 2022
 ### Current results
 Data of 20 most abundant elements in the CSD were extracted. There were 940k samples in total. The model was trained on k=5 and the result is shown below.
-![top20_k=5](./results/top20_elements/top20_k=5.jpg)
+![top20_k=5](./ml_results/top20_elements/top20_k=5.jpg)
 
 ### Next steps
 Since there are too much data that would be too slow to fit in the memory, I decided to switch to [tf.data.Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset). Later on, a figure showing how the performance (represented by confusion matrix) is developing with the increase of k shall be plotted. In addition the particular crystal IDs, and the elements where the model made misclassification shall be extracted and analyzed. 
@@ -39,3 +39,27 @@ The model has been trained on k=1-10. The results can be found in `/results/top2
 The model appeared to be predictive. 
 
 We got curious about how the distribution of distances between possible pairs of elements being nearest neighbor would be like (e.g. C-C being nearest neighbors, 3 peaks expected in the distribution).
+
+## 2.4 8th Apr 2022
+
+### Current results
+
+**Distribution of nearest neighbour distances by pairs of element types**:
+
+To keep the research simple but not trivial, all atoms with their element types and first nearest neighbour within the types {C, H, O, N} have been extracted. The total number of samples is about 17 millions.
+
+The distribution of the first nearest neighbour distances have been plotted. Then the plot is divided by possible atom type pairs.
+
+Here is the overall distribution of the first nearest neighbour distances: 
+![all.png](./nn_distribution/all_1.png)
+
+Then, these distributions are grouped by pairs of element types and plotted:
+![cc](./nn_distribution/CC_1.png)
+It followed our expectation of 3 peaks, as there are 3 valences for C and they have different covalent bond lengths.
+
+Histograms of other element types canbe found in the directory `./nn_distribution`.
+
+Then we developed an interest that how many shortest nearest neighbours are actually forming a bond, and if yes, how the distribution of these bond lengths are composed of various bond types?
+
+
+**Extracting bonds from nearest neighbours**
