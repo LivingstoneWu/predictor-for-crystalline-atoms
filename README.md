@@ -80,7 +80,7 @@ We got curious about how the distribution of distances between possible pairs of
 
 To keep the research simple but not trivial, all atoms with their element types and first nearest neighbour within the types {C, H, O, N} have been extracted. The total number of samples is about 17 millions.
 
-The distribution of the first nearest neighbour distances have been plotted. Then the plot is divided by possible atom type pairs.
+The distribution of the first nearest neighbour distances have been plotted. Then the plot is divided by possible atom type pairs. 
 
 Here is the overall distribution of the first nearest neighbour distances: 
 ![all.png](./nn_distribution/all_1.png)
@@ -97,5 +97,28 @@ We expect that the shortest nearest neighbours are mainly composed of bonds and 
 
 **Extracting bonds from nearest neighbours**
 
-As mentioned before, each atom is labelled with index, while the neighbours are not. The problem is, the CSD only gave index to atoms within the asymmetric unit, therefore it is hard to distinguish atoms between different asymmetric units and unit cells. Nevertheless the CSD provided bond types and length information with corrresponding two atoms labelled with the indices. We assumed that, if the distance and the bond length provided by the database have a difference smaller than some particular threshold, the neighbour should be the atom that is forming the particular bond. Therefore, the bond lengths are extracted by atom, and then the difference of the shortest nearest neighbour distance and shortest bond length was computed and plotted in histogram to find an appropriate threshold.
+As mentioned before, each atom is labelled with index, while the neighbours are not. The problem is, the CSD only gave index to atoms within the asymmetric unit, therefore it is hard to distinguish atoms between different asymmetric units and unit cells. Nevertheless the CSD provided bond types and length information with corrresponding two atoms labelled with the indices. We assumed that, if the distance and the bond length provided by the database have a difference smaller than some particular threshold, the neighbour should be the atom that is forming the particular bond. Based on the above hypothesis, the bond lengths are extracted by atom, and then the difference of the shortest nearest neighbour distance and shortest bond length was computed and plotted in histogram to find an appropriate threshold. H atoms were eliminated since they made up a big proportion while have only a few bond types. See extraction script in `/scripts/bond_extractor.py` and difference calculation script in `/scripts/difference_extractor.py`
 
+For each atom above, the shortest bond is extracted (if there is one). Here atoms with some bond length not registered were thrown away to avoid possible mismatches. Then the difference of the shortest bond length and nearest neighbour distance is plotted:
+
+![differences_none_removed_abs](./differences/differences_none_removed_abs.png)
+
+There is a very high peak near 0, as expected. The threshold was initially set to 0.05Å, and all shortest bonds with matching element types and having length difference less than the threshold were extracted. 
+
+Here is how the overall distribution of shortest bond lengths look like in nearest neighbour distance:
+
+![overall_bonds](./bond_within_neighbour/all.png)
+
+Here are some examples plotting bonds within neighbours:
+
+![CC_bond](./bond_within_neighbour/CC.png)
+
+The plot above contains too much bond types and is not easy to distinguish between. See `./bond_plot_CC/` for breaked down plots. They have been only initially processed, a figure with better quality would probably be updated shortly. 
+
+### distribution of single bond under nearest neighbours:
+
+![bond_CC_Single](./bond_plots_CC/CCSingle.png)
+
+### distribution of double bond under nearest neighbours: 
+
+![cc_double](./bond_plots_CC/CCDouble.png)
