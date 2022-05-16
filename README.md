@@ -97,7 +97,7 @@ We expect that the shortest nearest neighbours are mainly composed of bonds and 
 
 **Extracting bonds from nearest neighbours**
 
-As mentioned before, each atom is labelled with index, while the neighbours are not. The problem is, the CSD only gave index to atoms within the asymmetric unit, therefore it is hard to distinguish atoms between different asymmetric units and unit cells. Nevertheless the CSD provided bond types and length information with corrresponding two atoms labelled with the indices. We assumed that, if the distance and the bond length provided by the database have a difference smaller than some particular threshold, the neighbour should be the atom that is forming the particular bond. Based on the above hypothesis, the bond lengths are extracted by atom, and then the difference of the shortest nearest neighbour distance and shortest bond length was computed and plotted in histogram to find an appropriate threshold. H atoms were eliminated since they made up a big proportion while have only a few bond types. See extraction script in `/scripts/bond_extractor.py` and difference calculation script in `/scripts/difference_extractor.py`
+As mentioned before, each atom is labelled with index, while the neighbours are not. The problem is, the CSD only gave index to atoms within the asymmetric unit, therefore it is hard to distinguish atoms between different asymmetric units and unit cells. Nevertheless, the CSD provided bond types and length information with corresponding two atoms labelled with the indices. We assumed that, if the distance and the bond length provided by the database have a difference smaller than some particular threshold, the neighbour should be the atom that is forming the particular bond. Based on the above assumption, the bond lengths are extracted by atom, and then the difference between the shortest nearest neighbour distance and shortest bond length was computed and plotted in a histogram to find an appropriate threshold. H atoms were eliminated since they made up a big proportion while having only a few bond types. See extraction script in `/scripts/bond_extractor.py` and difference calculation script in `/scripts/difference_extractor.py`
 
 For each atom above, the shortest bond is extracted (if there is one). Here atoms with some bond length not registered were thrown away to avoid possible mismatches. Then the difference of the shortest bond length and nearest neighbour distance is plotted:
 
@@ -122,3 +122,14 @@ The plot above contains too much bond types and is not easy to distinguish betwe
 ### distribution of double bond under nearest neighbours: 
 
 ![cc_double](./bond_plots_CC/CCDouble.png)
+
+## Limitations & Suggestions for future research(Updated 16th May)
+
+As the project is approaching an end, the limitations and future directions are discussed here. 
+
+### Limitations
+
+* Machine learning model:
+
+  The model 
+
