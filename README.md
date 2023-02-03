@@ -123,13 +123,4 @@ The plot above contains too much bond types and is not easy to distinguish betwe
 
 ![cc_double](./bond_plots_CC/CCDouble.png)
 
-## Limitations & Suggestions for future research(Updated 16th May)
-
-As the project is approaching an end, the limitations and future directions are discussed here. 
-
-### Limitations
-
-* Machine learning model:
-
-  The model 
 
